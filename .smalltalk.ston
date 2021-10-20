@@ -1,0 +1,14 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'GoogleAuthenticator',
+      #directory : 'src',
+      #load : [ 'Tests' ],
+      #onWarningLog : true,
+      #platforms : [ #pharo ]
+    }
+  ],
+  #testing : {
+    #categories : [ 'GoogleAuthenticator-Tests' ]
+  }
+}
