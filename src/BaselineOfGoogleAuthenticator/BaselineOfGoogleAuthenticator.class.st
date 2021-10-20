@@ -14,22 +14,25 @@ BaselineOfGoogleAuthenticator >> baseline: spec [
 		"Dependencies"
 		spec baseline: 'CryptoNacl' with: [ spec loads: #( 'core' ); repository: 'github://objectguild/Crypto-Nacl:master' ].
 
-
 		"Packages"
-		spec package: 'GoogleAuthenticator'.
+		spec 
+			package: 'GoogleAuthenticator-Core' ;
 
-		spec package: 'GoogleAuthenticator-Sodium' with: [ spec requires: #( 'GoogleAuthenticator' 'CryptoNacl' ) ].
-		spec package: 'GoogleAuthenticator-Random' with: [ spec requires: #( 'GoogleAuthenticator' ) ].
+			package: 'GoogleAuthenticator-Sodium' with: [ spec requires: #( 'GoogleAuthenticator-Core' 'CryptoNacl' ) ] ;
+			package: 'GoogleAuthenticator-Random' with: [ spec requires: #( 'GoogleAuthenticator-Core' ) ] ;
 
-		spec package: 'GoogleAuthenticator-Tests' with: [ spec requires: #( 'GoogleAuthenticator-Random' ) ].
-
+			package: 'GoogleAuthenticator-Tests' with: [ spec requires: #( 'GoogleAuthenticator-Random' ) ] .
 
 		"Groups"
-		spec group: 'default' with: #( 'Core' ).
+		spec 
+			group: 'default' with: #( 'Core' ) ;
 
-		"Using Sodium by default, which is more secure. If you want default (shared) random, you must explicitly load it."
-		spec group: 'Core' with: #( 'GoogleAuthenticator-Sodium' ).
-		spec group: 'Random' with: #( 'GoogleAuthenticator-Random' ).
+			"Using Sodium by default, which is more secure. 
+			If you want default (shared) random, you must explicitly load it."
+			group: 'Core' with: #( 'GoogleAuthenticator-Sodium' ) ;
+			group: 'Random' with: #( 'GoogleAuthenticator-Random' ) ;
 
-		spec group: 'Tests' with: #( 'GoogleAuthenticator-Tests' ) ]
+			group: 'Tests' with: #( 'GoogleAuthenticator-Tests' ).
+		
+	 ]
 ]
