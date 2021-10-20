@@ -159,17 +159,6 @@ GoogleAuthenticator >> period: seconds [
 	period := seconds
 ]
 
-{ #category : #private }
-GoogleAuthenticator >> randomByteArrayOfSize: byteCount [
-	"Return a new byte array of size byteCount filled with random values"
-
-	| bytes |
-	bytes := ByteArray new: byteCount.
-	1 to: byteCount do: [ :each | 
-		bytes at: each put: 256 atRandom - 1 ].
-	^ bytes
-]
-
 { #category : #initialization }
 GoogleAuthenticator >> randomSecret [
 	"Initialize me to a random secret"
