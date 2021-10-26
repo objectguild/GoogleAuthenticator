@@ -32,7 +32,9 @@ BaselineOfGoogleAuthenticator >> baseline: spec [
 			group: 'Core' with: #( 'GoogleAuthenticator-Sodium' ) ;
 			group: 'Random' with: #( 'GoogleAuthenticator-Random' ) ;
 
-			group: 'Tests' with: #( 'GoogleAuthenticator-Tests' ).
+			group: 'Tests' with: #( 'GoogleAuthenticator-Tests' );
+
+			group: 'CI' with: #( 'Tests' ).
 		
 	 ]
 ]
