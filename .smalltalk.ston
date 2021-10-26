@@ -3,7 +3,7 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'GoogleAuthenticator',
       #directory : 'src',
-      #load : [ 'Tests' ],
+      #load : [ 'CI' ],
       #onWarningLog : true,
       #platforms : [ #pharo ]
     }
